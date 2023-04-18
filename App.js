@@ -9,8 +9,8 @@ export default function App() {
 
   return (
     <ThemeContext.Provider value={[theme, setTheme]}>
-      <Header/>
-      <ThemeToggler/>
+      <Header />
+      <ThemeToggler />
     </ThemeContext.Provider>
   );
 }
