@@ -1,20 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from "react";
+
+import { ThemeContext, themes } from "./context/ThemeContext";
+import Header from "./components/Header";
+import ThemeToggler from "./components/ThemeToggler";
 
 export default function App() {
+  const [theme, setTheme] = useState(themes.light);
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ThemeContext.Provider value={[theme, setTheme]}>
+      <Header/>
+      <ThemeToggler/>
+    </ThemeContext.Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
